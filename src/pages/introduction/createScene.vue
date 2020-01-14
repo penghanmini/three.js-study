@@ -7,9 +7,7 @@
     <div id="createScene">
       <div class="title">创建一个场景</div>
       <div>需要三个对象：场景、相机和渲染器。</div>
-      <div v-highlight>
-        <pre><code v-html="code"></code></pre>
-      </div>
+      <div v-highlight><pre><code v-html="code"></code></pre></div>
       <div>第一个参数：<b>视野角度</b></div>
       <div>第二个参数：<b>长宽比</b></div>
       <div>第三个参数：<b>近截面</b></div>
@@ -18,7 +16,6 @@
 </template>
 
 <script>
-  import * as THREE from 'three'
     export default {
         name: "createScene",
         components: {},
@@ -45,10 +42,6 @@
                 '}\n' +
                 '\n' +
                 'render();',
-              scene: null,
-              camera: null,
-              renderer: null,
-              mesh: null,
             }
         },
         mounted() {
@@ -58,27 +51,40 @@
         methods: {
           create(){
             let vm = this;
-            vm.scene = new THREE.Scene();//场景
-            vm.camera = new THREE.PerspectiveCamera(75, 200/175, 0.1, 1000);//相机
-            vm.renderer = new THREE.WebGLRenderer();//渲染器
-            vm.renderer.setSize(400,350);
-            document.getElementById('createScene').appendChild( vm.renderer.domElement);
+            var scene = new vm.three.Scene();//场景
+            var camera = new vm.three.PerspectiveCamera(75, 200/175, 0.1, 1000);//相机
+            var renderer = new vm.three.WebGLRenderer({antialias: true});//渲染器
+            renderer.setSize(400,350);
+            document.getElementById('createScene').appendChild( renderer.domElement);
 
-            var geometry = new THREE.BoxGeometry(2,2,2);
-            var material = new THREE.MeshBasicMaterial( {color: 0x409EFF} );
-            vm.mesh = new THREE.Mesh( geometry, material);
-            vm.scene.add(vm.mesh);
-            vm.camera.position.z = 5;
-            vm.renderer.setClearColor(0xFAECD8,1);
+            var geometry = new vm.three.BoxGeometry(2,2,2);
+            var material = new vm.three.MeshBasicMaterial({color: 0x409EFF});
+            var mesh = new vm.three.Mesh( geometry, material);
+            // material.wireframe=true;
+            scene.add(mesh);
+
+
+            camera.position.z = 5;
+            renderer.setClearColor(0xFAECD8,1);
+
+            var light = new vm.three.PointLight( 0xffffff );
+            light.position.copy( camera.position );
+            scene.add( light );
 
             function render(){
               requestAnimationFrame(render);
-              vm.mesh.rotation.x += 0.01;
-              vm.mesh.rotation.y += 0.01;
-              vm.renderer.render(vm.scene,vm.camera);
+              mesh.rotation.x += 0.01;
+              mesh.rotation.y += 0.01;
+              renderer.render(scene,camera);
             }
-
             render();
+          },
+          createLine(){
+            var scene = new vm.three.Scene();
+            var camera = new vm.three.PerspectiveCamera(75,200/175, 0.1, 1000);
+            var renderer = new vm.three.WebGLRenderer({antialias: true});
+            renderer.setSize(400,350);
+            document.getElementById('createScene').appendChild( renderer.domElement);
           },
         }
     }

@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import * as THREE from 'three'
+import echarts from 'echarts'
 
 import 'element-ui/lib/theme-chalk/index.css'
 
@@ -13,7 +14,8 @@ Vue.use(Highlight);
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
-Vue.use(THREE)
+Vue.prototype.echarts = echarts
+Vue.prototype.three = THREE
 
 /* eslint-disable no-new */
 new Vue({

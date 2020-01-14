@@ -5,7 +5,7 @@
 */
 <template>
     <div class="layout">
-      <leftMenu :options="leftData"></leftMenu>
+      <!--<leftMenu :options="leftData"></leftMenu>-->
       <div class='padding30'>
         <router-view/>
       </div>
@@ -42,7 +42,13 @@
                       label:'场景创建',
                       frontUrl:'/createScene',
                       iconStyl:'',
-                    }
+                    },
+                    {
+                      index:'12',
+                      label:'绘制一条直线',
+                      frontUrl:'/lineStudy',
+                      iconStyl:'',
+                    },
                   ],
                 },
                 {
@@ -68,7 +74,7 @@
     flex-flow: nowrap;
     justify-content: left;
     .padding30{
-      padding: 30px;
+      /*padding: 30px;*/
     }
   }
 </style>

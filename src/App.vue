@@ -18,11 +18,14 @@ export default {
   text-align: left;
   color: #2c3e50;
   font-size: 18px;
-  /*background: url("../static/img/back.jpg");*/
 }
 
   .title{
     font-size: 28px;
     margin: 10px 0;
+  }
+  code{
+    background-color: rgb(244, 244, 245) !important;
+    color: #606266 !important;
   }
 </style>
