@@ -46,9 +46,12 @@
               }],
               tooltip: {
                 trigger: 'axis',
-                backgroundColor:'#01A8EE',
+                backgroundColor:'rgba(0,0,0,0)',
                 formatter:(val)=>{
-                  console.log(val);
+                  let html = `<div style=\'background:linear-gradient(180deg,rgba(255,115,66,0.69),rgba(1,168,238,0.69),rgba(12,26,36,0.69));border: 1px solid rgba(255,115,66,0.69);min-width: 60px;display: inline-block;border-radius: 5px;color: #fff;padding:0 6px;font-size: 14px\'>
+                            ${val[0].name} <br /> ${val[0].value}
+                         </div>`
+                  return html;
                 }
               },
               xAxis: [

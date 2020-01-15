@@ -34,12 +34,12 @@ export default [
       title:"新版首页",
     }
   },
-  // {
-  //   path: '/newIndex',
-  //   name: 'newIndex',
-  //   component: newIndex,
-  //   meta:{
-  //     title:"新版首页",
-  //   }
-  // },
+  {
+    path: '/newIndex',
+    name: 'newIndex',
+    component: newIndex,
+    meta:{
+      title:"新版首页",
+    }
+  },
 ]

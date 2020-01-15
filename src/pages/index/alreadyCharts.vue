@@ -58,7 +58,7 @@
               },
               hoverOffset:6,
               clockwise:false,
-              color:['#FF4A53','#51D7FF'],
+              color:['#FF7342'],
               labelLine: {
                 normal: {
                   show: false
@@ -73,7 +73,7 @@
                     opacity:0,
                   },
                 },
-              ]
+              ]//this.options.data
             }
           ]
         };

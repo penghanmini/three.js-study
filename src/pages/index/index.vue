@@ -101,6 +101,10 @@
     </div>
     <div>
       <!--<svgMap></svgMap>-->
+      <!--rgba(0,0,0,0)-->
+      <div style='background:linear-gradient(180deg,rgba(255,115,66,0.69),rgba(1,168,238,0.69),rgba(12,26,36,0.69));border: 1px solid rgba(255,115,66,0.69);min-width: 60px;display: inline-block;border-radius: 5px;color: #fff;padding:6px;font-size: 12px'>
+        2018-12-12 <br /> 2154
+      </div>
     </div>
     <div class='middle'>
       <middle></middle>
@@ -162,67 +166,67 @@
           tableData:[
             {
               time:'2018-11-12 10:06:22',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12 10:06:22',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
             {
               time:'2018-11-12',
-              institutionName:'XXX医院',
+              institutionName:'天使儿童天使儿童天使儿童天使儿童',
               patientName:'王王',
               typeName:'挂号挂号挂号挂号挂号',
             },
@@ -430,6 +434,7 @@
             background: rgba(0,0,0,.7);
           }
         }
+
         .already-insert{
           display: inline-block;
           padding-left: 50px;
@@ -623,10 +628,7 @@
       height: 920px;
       bottom: 37px;
       left: 50%;
-      border: 1px solid red;
       margin-left: -560px;
-      /*background: #f0c78a;*/
-
     }
     @keyframes rightBottom {
       0% {

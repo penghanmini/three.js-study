@@ -15,6 +15,14 @@
         data() {
             return {}
         },
+        watch:{
+          options:{
+            handler(val,oldval){
+              this.initChart()
+            },
+            deep:true
+          }
+        },
         mounted() {
           this.initChart()
         },
@@ -71,13 +79,11 @@
 
               series: [
                 {
-                  // name: '利润',
                   type: 'bar',
                   barCategoryGap:4,
                   barWidth: 12,
                   label: {
                     show: true,
-                    // position: [10, 10]
                   },
                   itemStyle: {
                     normal: {

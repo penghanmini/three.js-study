@@ -29,7 +29,7 @@
                 <div :class='["number-item", index <= 2 ? "border-red":"border-blue"]'>{{index<9?`0${index +1}`:index+1}}</div>
               </div>
             </div>
-            <leftBottomBarChart class="left_bottom_bar" :options="leftBottomBarChartData"></leftBottomBarChart>
+            <leftBottomBarChart class="left_bottom_bar" :options="leftBottomBarChartData" ref="barChart"></leftBottomBarChart>
           </div>
         </div>
       </div>
@@ -110,8 +110,16 @@
                     name:'武侯人民医院',
                     value:45
                   },
+                  {
+                    name:'成都中医院',
+                    value:215
+                  },
+                  {
+                    name:'华西医院',
+                    value:45
+                  },
                 ],
-                height: 300
+                height: 0,
               },
               tableData:[
                 {
@@ -185,7 +193,11 @@
             }
         },
         mounted() {
-
+          this.leftBottomBarChartData.height = this.leftBottomBarChartData.severData.length*50;
+          this.$nextTick(()=>{
+            this.$refs.barChart.initChart();
+          })
+          this.movebox();
         },
         methods: {
           //业务流
@@ -244,7 +256,6 @@
             let vm = this;
             let nodes = $('.table-content')
             let heights = $('.row').height();
-            let time11 = datas.length * 440
             if(heights){
               nodes.css("marginTop",-heights * datas.length + 'px')
             }else {
@@ -345,8 +356,10 @@
           }
         }
         .left_bottom_main{
+          height: 600px;
           display: flex;
           padding: 10px 0 0 65px;
+          overflow: auto;
           .left_bottom_bar{
           }
           .left-number{

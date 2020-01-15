@@ -65,7 +65,30 @@
               interval:0,
             }
           },
-          series: [{
+          series: [
+            {
+              name: 'bar',
+              type: 'bar',
+              barWidth: 10,
+              itemStyle: {
+                barBorderRadius: 0,
+                color:  new this.echarts.graphic.LinearGradient(
+                  0, 0, 1, 0,
+                  [
+                    {offset: 0, color: 'rgba(0,50,91,1)'},
+                    {offset: 1, color:'rgba(0,212,254,1)'}
+                  ]
+                )
+              },
+              animationDelay: function (dataIndex, params) {
+                return 500;
+                // return params * 50;
+                // return params.index * 50;
+              },
+              z:-15,
+              data: barData
+            },
+            {
             name: 'dotted',
             type: 'pictorialBar',
             symbol: 'rect',
@@ -79,19 +102,10 @@
               }
             },
             itemStyle: {
-              color: new this.echarts.graphic.LinearGradient(
-                1, 0, 0, 0,
-                [
-                  {offset: 0, color: 'rgba(0,212,254,1)'},
-                  {offset: 1, color: 'rgba(0,50,91,1)'},
-                ]
-              ),
-            },
-            animationDelay: function (dataIndex, params) {
-              return params.index * 50;
+              color:'#052B47'
             },
             symbolRepeat: true,
-            symbolSize: [3, 10],
+            symbolSize: [2, 11],
             symbolMargin: 1,
             z: -10,
             data: barData
@@ -121,7 +135,7 @@
                 ]
               )
             },
-            z: -11,
+            z: -16,
             data: lineData
           },]
         };
